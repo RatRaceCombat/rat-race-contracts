@@ -1,0 +1,35 @@
+{
+  "name": "@rrc/contracts",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "compile": "hardhat --config hardhat.config.cjs compile",
+    "wallets:setup": "node scripts/setup-wallets.cjs",
+    "safe:plan": "node scripts/plan-safe.cjs",
+    "gas:production": "node scripts/estimate-production.cjs",
+    "test": "hardhat --config hardhat.config.cjs test",
+    "test:fork": "node scripts/test-fork.cjs",
+    "preflight:testnet": "hardhat --config hardhat.config.cjs run scripts/preflight.cjs --network hyperevmTestnet",
+    "preflight:mainnet": "hardhat --config hardhat.config.cjs run scripts/preflight.cjs --network hyperevm",
+    "ownership:prepare:mainnet": "hardhat --config hardhat.config.cjs run scripts/prepare-ownership.cjs --network hyperevm",
+    "ownership:prepare:local": "hardhat --config hardhat.config.cjs run scripts/prepare-ownership.cjs --network localhost",
+    "deploy:distributor:mainnet": "hardhat --config hardhat.config.cjs run scripts/deploy-distributor.cjs --network hyperevm",
+    "deploy:skins:mainnet": "hardhat --config hardhat.config.cjs run scripts/deploy-skins.cjs --network hyperevm",
+    "deploy:distributor:testnet": "hardhat --config hardhat.config.cjs run scripts/deploy-distributor.cjs --network hyperevmTestnet",
+    "deploy:skins:testnet": "hardhat --config hardhat.config.cjs run scripts/deploy-skins.cjs --network hyperevmTestnet",
+    "deploy:skins:local": "hardhat --config hardhat.config.cjs run scripts/deploy-skins.cjs --network localhost",
+    "node": "hardhat --config hardhat.config.cjs node",
+    "deploy:local": "hardhat --config hardhat.config.cjs run scripts/deploy.cjs --network localhost",
+    "deploy:testnet": "hardhat --config hardhat.config.cjs run scripts/deploy.cjs --network hyperevmTestnet",
+    "deploy:mainnet": "hardhat --config hardhat.config.cjs run scripts/deploy.cjs --network hyperevm"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-chai-matchers": "^2.0.8",
+    "@nomicfoundation/hardhat-ethers": "^3.0.8",
+    "@openzeppelin/contracts": "^5.1.0",
+    "chai": "^4.5.0",
+    "dotenv": "^16.4.5",
+    "ethers": "^6.13.4",
+    "hardhat": "^2.22.17"
+  }
+}
